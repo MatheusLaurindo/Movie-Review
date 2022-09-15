@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Database\Repositories\Base\" />
-    <Folder Include="Database\Repositories\Interfaces\" />
     <Folder Include="Services\Base\" />
     <Folder Include="Services\Interfaces\" />
   </ItemGroup>

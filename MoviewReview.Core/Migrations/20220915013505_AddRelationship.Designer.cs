@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoviewReview.Core.Database;
 
@@ -11,9 +12,10 @@ using MoviewReview.Core.Database;
 namespace MoviewReview.Core.Migrations
 {
     [DbContext(typeof(MoviewReviewContext))]
-    partial class MoviewReviewContextModelSnapshot : ModelSnapshot
+    [Migration("20220915013505_AddRelationship")]
+    partial class AddRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,29 +49,6 @@ namespace MoviewReview.Core.Migrations
                     b.HasIndex("TitleId");
 
                     b.ToTable("Actors");
-                });
-
-            modelBuilder.Entity("MoviewReview.Core.Domain.Entities.Cast", b =>
-                {
-                    b.Property<int>("IdCast")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCast"), 1L, 1);
-
-                    b.Property<int>("ActorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TitleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdCast");
-
-                    b.HasIndex("ActorId");
-
-                    b.HasIndex("TitleId");
-
-                    b.ToTable("Casts");
                 });
 
             modelBuilder.Entity("MoviewReview.Core.Domain.Entities.Director", b =>
@@ -197,25 +176,6 @@ namespace MoviewReview.Core.Migrations
                         .HasForeignKey("TitleId");
                 });
 
-            modelBuilder.Entity("MoviewReview.Core.Domain.Entities.Cast", b =>
-                {
-                    b.HasOne("MoviewReview.Core.Domain.Entities.Actor", "Actor")
-                        .WithMany("Casts")
-                        .HasForeignKey("ActorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MoviewReview.Core.Domain.Entities.Title", "Title")
-                        .WithMany()
-                        .HasForeignKey("TitleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Actor");
-
-                    b.Navigation("Title");
-                });
-
             modelBuilder.Entity("MoviewReview.Core.Domain.Entities.Review", b =>
                 {
                     b.HasOne("MoviewReview.Core.Domain.Entities.Title", "Titles")
@@ -244,11 +204,6 @@ namespace MoviewReview.Core.Migrations
                         .IsRequired();
 
                     b.Navigation("Director");
-                });
-
-            modelBuilder.Entity("MoviewReview.Core.Domain.Entities.Actor", b =>
-                {
-                    b.Navigation("Casts");
                 });
 
             modelBuilder.Entity("MoviewReview.Core.Domain.Entities.Title", b =>
