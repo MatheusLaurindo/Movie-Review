@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace MoviewReview.Core.Database.Maps.Base
 {
-    public class BaseDomainMap<T> : IEntityTypeConfiguration<T> where T : Entity
+    public class EntityMap<T> : IEntityTypeConfiguration<T> where T : Entity
     {
         private readonly string _tableName;
 
-        public BaseDomainMap(string tableName = "")
+        public EntityMap(string tableName = "")
         {
             _tableName = tableName;
         }
@@ -24,6 +24,10 @@ namespace MoviewReview.Core.Database.Maps.Base
             {
                 builder.ToTable(_tableName);
             }
+
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
+            builder.Property(x => x.CreationDate).HasColumnName("CreationDate").IsRequired();
         }
     }
 }

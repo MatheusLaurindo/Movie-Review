@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoviewReview.Core.Database;
 
@@ -11,9 +12,10 @@ using MoviewReview.Core.Database;
 namespace MoviewReview.Core.Migrations
 {
     [DbContext(typeof(MoviewReviewContext))]
-    partial class MoviewReviewContextModelSnapshot : ModelSnapshot
+    [Migration("20220915172433_finalEntities")]
+    partial class finalEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

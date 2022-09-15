@@ -8,5 +8,7 @@ namespace MoviewReview.Core.Domain.Entities
         public string Name { get; set; }
         public string Password { get; set; }
         public Rules Rules { get; set; }
+
+        public virtual List<Review> Reviews { get; set; }
     }
 }

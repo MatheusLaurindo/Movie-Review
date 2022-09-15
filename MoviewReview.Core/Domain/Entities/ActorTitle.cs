@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MoviewReview.Core.Domain.Entities
 {
-    public class Cast : Entity
+    public class ActorTitle : Entity
     {
-        public int TitleId { get; set; }
+        public int IdTitle { get; set; }
         public virtual Title Title { get; set; }
-        public int ActorId { get; set; }
+        public int IdActor { get; set; }
         public virtual Actor Actor { get; set; }
     }
 }

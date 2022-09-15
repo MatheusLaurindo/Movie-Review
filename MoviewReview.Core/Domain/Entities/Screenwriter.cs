@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoviewReview.Core.Domain.Entities
 {
-    public class Director : Person
+    public class Screenwriter : Person
     {
         public virtual List<Title> Titles { get; set; }
     }

@@ -7,9 +7,9 @@ namespace MoviewReview.Core.Domain.Entities
     {
         public int Note { get; protected set; }
         public string Description { get; protected set; }
-        public int UserId { get; set; }
-        public virtual User Users { get; set; }
-        public int TitleId { get; set; }
-        public virtual Title Titles { get; set; }
+        public int IdUser { get; set; }
+        public virtual User User { get; set; }
+        public int IdTitle { get; set; }
+        public virtual Title Title { get; set; }
     }
 }

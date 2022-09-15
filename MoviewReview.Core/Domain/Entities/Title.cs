@@ -9,12 +9,14 @@ namespace MoviewReview.Core.Domain.Entities
         public TypeMovie TypeMovie { get; protected set; }
         public Genre Genre { get; protected set; }
         public string TitleMovie { get; protected set; }
-        public int DirectorId { get; set; }
+        public int IdDirector { get; set; }
         public virtual Director Director { get; protected set; }
-        public string Screenwriter { get; protected set; }
-        public Actor Actor { get; protected set; }
+        public int IdScreenwriter { get; set; }
+        public Screenwriter Screenwriter { get; protected set; }        
         public int Duration { get; protected set; }
-        public string Description { get; set; }
-        public List<Cast> Casts{ get; set; }
+        public string Synopsis { get; set; }        
+        public virtual List<Review> Reviews { get; set; }
+        public virtual List<Actor> Actors { get; set; }
+
     }
 }

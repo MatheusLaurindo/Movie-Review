@@ -9,6 +9,6 @@ namespace MoviewReview.Core.Domain.Entities
 {
     public class Actor : Person
     {
-        public List<Cast> Casts { get; set; }
+        public List<Title> Titles { get; set; }
     }
 }
