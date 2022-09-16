@@ -199,14 +199,16 @@ namespace MoviewReview.Core.Migrations
                         .HasColumnName("IdScreenwriter");
 
                     b.Property<string>("Synopsis")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Synopsis1");
-
-                    b.Property<string>("TitleMovie")
                         .IsRequired()
                         .HasMaxLength(2147483647)
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Synopsis");
+
+                    b.Property<string>("TitleMovie")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("TitleMovie");
 
                     b.Property<int>("TypeMovie")
                         .HasColumnType("int")

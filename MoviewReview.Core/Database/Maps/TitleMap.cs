@@ -26,7 +26,7 @@ namespace MoviewReview.Core.Database.Maps
             builder.Property(x => x.IdDirector).HasColumnName("IdDirector").IsRequired();
             builder.Property(x => x.IdScreenwriter).HasColumnName("IdScreenwriter").IsRequired();
             builder.Property(x => x.Duration).HasColumnName("Duration").IsRequired();
-            builder.Property(x => x.TitleMovie).HasColumnName("Synopsis").HasMaxLength(int.MaxValue).IsRequired();
+            builder.Property(x => x.Synopsis).HasColumnName("Synopsis").HasMaxLength(int.MaxValue).IsRequired();
 
             builder.HasOne(x => x.Director).WithMany(x => x.Titles).HasForeignKey(x => x.IdDirector);            
             builder.HasOne(x => x.Screenwriter).WithMany(x => x.Titles).HasForeignKey(x => x.IdScreenwriter);
