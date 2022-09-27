@@ -1,4 +1,5 @@
-﻿using MoviewReview.Core.Database.Repositories.Interfaces.Base;
+﻿using MoviewReview.Core.Database.Repositories.Interfaces;
+using MoviewReview.Core.Database.Repositories.Interfaces.Base;
 using MoviewReview.Core.Domain.Entities;
 using MoviewReview.Core.Services.Base;
 using MoviewReview.Core.Services.Interfaces;
@@ -12,8 +13,11 @@ namespace MoviewReview.Core.Services
 {
     public class ScreenwriterService : GenericService<Screenwriter>, IScreenwriterService
     {
-        public ScreenwriterService(IGenericRepository<Screenwriter> repository) : base(repository)
+        private readonly IScreenwriterRepository _repository;
+
+        public ScreenwriterService(IScreenwriterRepository repository) : base(repository)
         {
+            _repository = repository;
         }
     }
 }

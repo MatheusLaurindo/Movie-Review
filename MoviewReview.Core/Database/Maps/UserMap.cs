@@ -17,7 +17,7 @@ namespace MoviewReview.Core.Database.Maps
             
             builder.Property(x => x.Name).HasColumnName("Name").HasMaxLength(100).IsRequired();
             builder.Property(x => x.Password).HasColumnName("Password").HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Name).HasColumnName("Rules").IsRequired();
+            builder.Property(x => x.Rules).HasColumnName("Rules").IsRequired();
         }
     }
 }

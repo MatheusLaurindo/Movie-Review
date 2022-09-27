@@ -14,6 +14,6 @@ namespace MoviewReview.Core.Services.Interfaces.Base
         Task<T> GetByIdAsync(int id);
         Task UpdateAsync(T obj);
         Task RemoveAsync(T obj);
-        Task DeleteByIdAsync(string id);
+        Task DeleteByIdAsync(int id);
     }
 }

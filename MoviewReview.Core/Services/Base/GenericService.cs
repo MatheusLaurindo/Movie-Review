@@ -50,7 +50,7 @@ namespace MoviewReview.Core.Services.Base
             await _repository.RemoveAsync(obj);
         }
 
-        public async Task DeleteByIdAsync(string id)
+        public async Task DeleteByIdAsync(int id)
         {
             await _repository.RemoveByIdAsync(id);
         }

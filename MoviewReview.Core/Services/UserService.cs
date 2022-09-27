@@ -14,13 +14,16 @@ namespace MoviewReview.Core.Services
 {
     public class UserService : GenericService<User>, IUserService
     {
-        public UserService(IGenericRepository<User> repository) : base(repository)
+        private readonly IUserRepository _repository;
+
+        public UserService(IUserRepository repository) : base(repository)
         {
+            _repository = repository;
         }
 
         public Task<User> GetByNameAndPasswordAsync(string name, string password)
         {
-            throw new NotImplementedException();
+            return _repository.GetByNameAndPasswordAsync(name, password);
         }
     }
 }

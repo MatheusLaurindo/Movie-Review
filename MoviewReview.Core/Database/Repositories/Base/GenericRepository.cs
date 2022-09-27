@@ -55,7 +55,7 @@ namespace MoviewReview.Core.Database.Repositories.Base
             await _context.SaveChangesAsync();
         }
 
-        public async Task RemoveByIdAsync(string id)
+        public async Task RemoveByIdAsync(int id)
         {
             var obj = _dbSet.Find(id);
             if (obj != null)

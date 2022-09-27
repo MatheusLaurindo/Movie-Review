@@ -10,7 +10,7 @@ namespace MoviewReview.Core.Database.Repositories.Interfaces.Base
         Task<List<T>> GetAllAsync();
         Task UpdateAsync(T obj);
         Task RemoveAsync(T obj);
-        Task RemoveByIdAsync(string id);
+        Task RemoveByIdAsync(int id);
         Task<IEnumerable<T>> SearchAsync(Expression<Func<T, bool>> predicate);
     }
 }

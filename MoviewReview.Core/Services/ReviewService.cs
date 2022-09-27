@@ -14,8 +14,11 @@ namespace MoviewReview.Core.Services
 {
     public class ReviewService : GenericService<Review>, IReviewService
     {
-        public ReviewService(IGenericRepository<Review> repository) : base(repository)
+        private readonly IReviewRepository _repository;
+
+        public ReviewService(IReviewRepository repository) : base(repository)
         {
+            _repository = repository;
         }
     }
 }

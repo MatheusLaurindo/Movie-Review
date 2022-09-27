@@ -1,4 +1,5 @@
-﻿using MoviewReview.Core.Database.Repositories.Interfaces.Base;
+﻿using MoviewReview.Core.Database.Repositories.Interfaces;
+using MoviewReview.Core.Database.Repositories.Interfaces.Base;
 using MoviewReview.Core.Domain.Entities;
 using MoviewReview.Core.Services.Base;
 using MoviewReview.Core.Services.Interfaces;
@@ -12,8 +13,10 @@ namespace MoviewReview.Core.Services
 {
     public class ActorService : GenericService<Actor>, IActorService
     {
-        public ActorService(IGenericRepository<Actor> repository) : base(repository)
+        private readonly IActorRepository _repository;
+        public ActorService(IActorRepository repository) : base(repository)
         {
+            _repository = repository;
         }
     }
 }
