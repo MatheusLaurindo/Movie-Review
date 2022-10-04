@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieReview.API.Services.Interfaces;
 using MoviewReview.Core.Domain.Entities;
 using MoviewReview.Core.Services.Interfaces;
@@ -23,7 +24,9 @@ namespace MovieReview.API.Controllers
             return Ok();
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
+        [Route("GetAll")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllAsync()
         {
             try
@@ -93,12 +96,13 @@ namespace MovieReview.API.Controllers
             }
         }
 
-        [HttpPost("Login/{name}/{password}")]
-        public async Task<IActionResult> LoginAsync(string name, string password)
+        [HttpPost("Login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> LoginAsync([FromBody] User user)
         {
             try
             {
-                var user = await _userService.GetByNameAndPasswordAsync(name, password);
+                var userResult = await _userService.GetByNameAndPasswordAsync(user.Name, user.Password);
 
                 if (user == null)
                 {
