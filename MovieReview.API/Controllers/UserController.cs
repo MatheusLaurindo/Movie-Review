@@ -21,11 +21,6 @@ namespace MovieReview.API.Controllers
             _userService = userService;
         }
 
-        public IActionResult Index()
-        {
-            return Ok();
-        }
-
         [HttpGet]
         [Route("GetAll")]
         [Authorize]

@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <PackageReference Include="Refit" Version="6.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieReview.Database\MovieReview.Database.csproj" />
+    <ProjectReference Include="..\MoviewReview.Core\MovieReview.Core.csproj" />
   </ItemGroup>
 
 </Project>

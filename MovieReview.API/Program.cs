@@ -77,8 +77,6 @@ app.UseAuthorization();
 
 app.UseAuthentication();
 
-app.UseRouting();
-
 app.MapControllers();
 
 app.Run();

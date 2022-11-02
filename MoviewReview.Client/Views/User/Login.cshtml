@@ -1,0 +1,13 @@
+﻿@using MoviewReview.Client.Models
+@model LoginViewModel
+
+<div class="container">
+    <form>
+        <input asp-for="Name" type="text" />
+        <input asp-for="Password" type="password" />
+        <button type="submit" asp-action="Login" asp-controller="User">Logar</button>
+    </form>
+    <div class="container"
+        <p></p>
+    </div>
+</div>
