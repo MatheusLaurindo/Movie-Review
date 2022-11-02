@@ -1,5 +1,5 @@
 ﻿
-namespace MoviewReview.Core.Domain.Entities.Enums
+namespace MovieReview.Core.Domain.Entities.Enums
 {
     public enum Genre
     {

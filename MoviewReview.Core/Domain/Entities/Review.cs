@@ -1,15 +1,36 @@
-﻿using MoviewReview.Core.Domain.Base;
+﻿using MovieReview.Core.Domain.Base;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
-namespace MoviewReview.Core.Domain.Entities
+namespace MovieReview.Core.Domain.Entities
 {
     public class Review : Entity
     {
-        public int Note { get; protected set; }
-        public string Description { get; protected set; }
-        public int IdUser { get; set; }
-        public virtual User User { get; set; }
-        public int IdTitle { get; set; }
-        public virtual Title Title { get; set; }
+        public int Note { get; private set; }
+        public string Description { get; private set; }
+        public int IdUser { get; private set; }
+        public virtual User User { get; private set; }
+        public int IdTitle { get; private set; }
+        public virtual Title Title { get; private set; }
+
+        public void SetDescription(string description)
+        {
+            Description = description;
+        }
+
+        public void SetNote(int note)
+        {
+            Note = note;
+        }
+
+        public void SetUser(User user)
+        {
+            User = user;
+        }
+
+        public void SetTitle(Title title)
+        {
+            Title = title;
+        }
     }
 }

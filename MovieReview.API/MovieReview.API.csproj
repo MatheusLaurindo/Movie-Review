@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MoviewReview.Core\MoviewReview.Core.csproj" />
+    <ProjectReference Include="..\MovieReview.Database\MovieReview.Database.csproj" />
+    <ProjectReference Include="..\MoviewReview.Core\MovieReview.Core.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

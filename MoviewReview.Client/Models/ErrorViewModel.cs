@@ -1,4 +1,4 @@
-namespace MoviewReview.Client.Models
+namespace MovieReview.Client.Models
 {
     public class ErrorViewModel
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoviewReview.Core.Domain.Entities.Enums
+namespace MovieReview.Core.Domain.Entities.Enums
 {
     public enum TypeMovie
     {

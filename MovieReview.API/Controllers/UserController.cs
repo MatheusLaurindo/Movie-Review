@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieReview.API.Services.Interfaces;
-using MoviewReview.Core.Domain.Entities;
-using MoviewReview.Core.Services.Interfaces;
+using MovieReview.Core.Domain.Entities;
+using MovieReview.Database.Services.Interfaces;
 
 namespace MovieReview.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UserController : ControllerBase
     {
         private readonly ITokenService _tokenService;
@@ -26,7 +28,7 @@ namespace MovieReview.API.Controllers
 
         [HttpGet]
         [Route("GetAll")]
-        [AllowAnonymous]
+        [Authorize]
         public async Task<IActionResult> GetAllAsync()
         {
             try

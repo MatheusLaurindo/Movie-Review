@@ -4,10 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using MovieReview.API;
 using MovieReview.API.Services;
 using MovieReview.API.Services.Interfaces;
-using MoviewReview.Core.Database.Repositories;
-using MoviewReview.Core.Database.Repositories.Interfaces;
-using MoviewReview.Core.Services;
-using MoviewReview.Core.Services.Interfaces;
+using MovieReview.Database.Repositories;
+using MovieReview.Database.Repositories.Interfaces;
+using MovieReview.Database.Services;
+using MovieReview.Database.Services.Interfaces;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);

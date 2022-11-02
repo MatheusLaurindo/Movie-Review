@@ -1,4 +1,4 @@
-﻿using MoviewReview.Core.Domain.Entities;
+﻿using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.API.Services.Interfaces
 {
